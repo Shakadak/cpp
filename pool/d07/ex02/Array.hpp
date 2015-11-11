@@ -41,6 +41,7 @@ class Array {
                 _size = 0;
             }
             else {
+                _size = rhs._size;
                 for (size_t i = 0; i < _size; i++) {
                     _xs[i] = rhs._xs[i];
                 }

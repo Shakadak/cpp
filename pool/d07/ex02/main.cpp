@@ -11,13 +11,13 @@ void    iter(A& xs, B const& l, C& f) {
         xs[i] = f(xs[i]);
     }
 }
-static char toLower(char c) {
+/*static char toLower(char c) {
     return (std::tolower(c));
 }
 
 static char toUpper(char c) {
     return (std::toupper(c));
-}
+}*/
 
 static int plusOne(int i) {
     return (i + 1);
@@ -45,6 +45,7 @@ int main(void) {
         std::cout << "iter(xs, xs.size(), printIt): " << std::endl;
         iter(xs, xs.size(), printIt<std::string>);
     }
+    std::cout << "---" <<std::endl;
     {
         Array<int> xs(4);
         xs[0] = 1;
@@ -54,6 +55,7 @@ int main(void) {
         std::cout << "xs: " << xs[0] << ", " << xs[1] << ", " << xs[2] << ", " << xs[3] << std::endl;
         iter(xs, 4, plusOne);
         std::cout << "iter(xs, 4, plusOne): " << xs[0] << ", " << xs[1] << ", " << xs[2] << ", " << xs[3] << std::endl;
+        std::cout << "\t--- test copie constructor." <<std::endl;
         Array<int> ys(xs);
         std::cout << "iter(ys, ys.size(), printIt): " << std::endl;
         iter(ys, ys.size(), printIt<int>);
@@ -62,6 +64,7 @@ int main(void) {
         iter(ys, ys.size(), printIt<int>);
         std::cout << "iter(xs, xs.size(), printIt): " << std::endl;
         iter(xs, xs.size(), printIt<int>);
+        std::cout << "\t--- test void constructor then assignation operator" <<std::endl;
         Array<int> zs;
         zs = xs;
         std::cout << "iter(zs, zs.size(), printIt): " << std::endl;
@@ -72,6 +75,7 @@ int main(void) {
         std::cout << "iter(xs, xs.size(), printIt): " << std::endl;
         iter(xs, xs.size(), printIt<int>);
     }
+    std::cout << "---" <<std::endl;
     {
         Array<float> xs(4);
         xs[0] = 1.f;
@@ -82,6 +86,7 @@ int main(void) {
         iter(xs, 4, minusOne<float>);
         std::cout << "iter(xs, 4, minusOne<float>): " << xs[0] << ", " << xs[1] << ", " << xs[2] << ", " << xs[3] << std::endl;
     }
+    std::cout << "---" <<std::endl;
     {
         Array<char> xs;
         try {
