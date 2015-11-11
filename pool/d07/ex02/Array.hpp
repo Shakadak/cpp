@@ -1,6 +1,8 @@
 #ifndef ARRAY_HPP
 # define ARRAY_HPP
 
+# include <stdexcept>
+
 template<typename A>
 class Array {
     public:
