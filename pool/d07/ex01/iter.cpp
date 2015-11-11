@@ -22,6 +22,11 @@ static int plusOne(int i) {
     return (i + 1);
 }
 
+template<typename A>
+static A    minusOne(A x) {
+    return (x - 1);
+}
+
 int main(void) {
     {
         std::string xs = "Hello World";
@@ -40,6 +45,12 @@ int main(void) {
         std::cout << "xs: " << xs[0] << ", " << xs[1] << ", " << xs[2] << ", " << xs[3] << std::endl;
         iter(xs, 4, plusOne);
         std::cout << "iter(xs, 4, plusOne): " << xs[0] << ", " << xs[1] << ", " << xs[2] << ", " << xs[3] << std::endl;
+    }
+    {
+        float xs[4] = {1.0f, 2.0f, 3.0f, 4.2f};
+        std::cout << "xs: " << xs[0] << ", " << xs[1] << ", " << xs[2] << ", " << xs[3] << std::endl;
+        iter(xs, 4, minusOne<float>);
+        std::cout << "iter(xs, 4, minusOne<float>): " << xs[0] << ", " << xs[1] << ", " << xs[2] << ", " << xs[3] << std::endl;
     }
     return (0);
 }
