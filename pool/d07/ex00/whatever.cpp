@@ -9,6 +9,16 @@ void    swap(A& a, A& b) {
 }
 
 template<typename A>
+A const&  min(A const& x, A const& y) {
+    return (x < y ? x : y);
+}
+
+template<typename A>
+A const&  max(A const& x, A const& y) {
+    return (x > y ? x : y);
+}
+
+template<typename A>
 A&  min(A& x, A& y) {
     return (x < y ? x : y);
 }
@@ -19,6 +29,7 @@ A&  max(A& x, A& y) {
 }
 
 int main(void) {
+    std::cout << "---" << std::endl;
     {
         int x = 1;
         int y = 2;
@@ -58,146 +69,146 @@ int main(void) {
     {
         int
             a
-             =
-              2
-              ;
+            =
+            2
+            ;
         int
             b
-             =
-              3
-              ;
+            =
+            3
+            ;
         ::
             swap
             (
-              a
-              ,
-               b
-                );
+             a
+             ,
+             b
+            );
         std
             ::
             cout
-             <<
-              "a = "
-               <<
-                a
-                 <<
-                  ", b = "
-                   <<
-                    b
-                     <<
-                      std
-                      ::
-                      endl
-                      ;
+            <<
+            "a = "
+            <<
+            a
+            <<
+            ", b = "
+            <<
+            b
+            <<
+            std
+            ::
+            endl
+            ;
         std
             ::
             cout
-             <<
-              "min( a, b ) = "
-               <<
-                ::
-                min
-                (
-                  a
-                  ,
-                   b
-                    )
-                 <<
-                  std
-                  ::
-                  endl
-                  ;
+            <<
+            "min( a, b ) = "
+            <<
+            ::
+            min
+            (
+             a
+             ,
+             b
+            )
+            <<
+            std
+            ::
+            endl
+            ;
         std
             ::
             cout
-             <<
-              "max( a, b ) = "
-               <<
-                ::
-                max
-                (
-                  a
-                  ,
-                   b
-                    )
-                 <<
-                  std
-                  ::
-                  endl
-                  ;
+            <<
+            "max( a, b ) = "
+            <<
+            ::
+            max
+            (
+             a
+             ,
+             b
+            )
+            <<
+            std
+            ::
+            endl
+            ;
         std
             ::
             string
-             c
-              =
-               "chaine1"
-               ;
+            c
+            =
+            "chaine1"
+            ;
         std
             ::
             string
-             d
-              =
-               "chaine2"
-               ;
+            d
+            =
+            "chaine2"
+            ;
         ::
             swap
             (
              c
              ,
-              d
+             d
             );
         std
             ::
             cout
-             <<
-              "c = "
-               <<
-                c
-                 <<
-                  ", d = "
-                   <<
-                    d
-                     <<
-                      std
-                      ::
-                      endl
-                      ;
+            <<
+            "c = "
+            <<
+            c
+            <<
+            ", d = "
+            <<
+            d
+            <<
+            std
+            ::
+            endl
+            ;
         std
             ::
             cout
-             <<
-              "min( c, d ) = "
-               <<
-                ::
-                min
-                (
-                  c
-                  ,
-                   d
-                    )
-                 <<
-                  std
-                  ::
-                  endl
-                  ;
+            <<
+            "min( c, d ) = "
+            <<
+            ::
+            min
+            (
+             c
+             ,
+             d
+            )
+            <<
+            std
+            ::
+            endl
+            ;
         std
             ::
             cout
-             <<
-              "max( c, d ) = "
-               <<
-                ::
-                max
-                (
-                  c
-                  ,
-                   d
-                    )
-                 <<
-                  std
-                  ::
-                  endl
-                  ;
+            <<
+            "max( c, d ) = "
+            <<
+            ::
+            max
+            (
+             c
+             ,
+             d
+            )
+            <<
+            std
+            ::
+            endl
+            ;
         return
             0
             ;
